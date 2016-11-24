@@ -1,0 +1,76 @@
+<h4><strong>Crear Cliente</strong></h4>
+
+
+<!--<form id ="form-create" class="form-horizontal">
+<div class="errors-container" id="errors"></div>
+<fieldset>
+<div class="form-group {{if changeset.error.username 'has-error'}}" id=username>
+<label for="" class="col-sm-4 control-label" >Nombre de Usuario</label>
+<div class="col-sm-4 controls">
+{{input  placeholder="Ingrese su nombre de usuario" class="form-control" value=changeset.username}}
+{{#if changeset.error.username}}
+<span class="help-block">{{changeset.error.username.validation}}</span>
+{{/if}}
+</div>
+</div>-->
+
+<div id="root" align="center">
+  <form id="form-create" class="form-horizontal">
+    <div class="errors-container" id="errors"></div>
+    <div class="form-group {{if changeset.error.username 'has-error'}}">
+      <p>Nombre de Usuario</p>
+      {{input placeholder="Ingrese su nombre de usuario" value=changeset.username}}
+      {{#if changeset.error.username}}
+      <span class="help-block">{{changeset.error.username.validation}}</span>
+      {{/if}}
+    </div>
+
+    <div class="form-group {{if changeset.error.name 'has-error'}}">
+      <p>Nombres</p>
+      {{input placeholder="Ingrese su nombre completo" value=changeset.name}}
+      {{#if changeset.error.name}}
+      <span class="help-block">{{changeset.error.name.validation}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group {{if changeset.error.identification 'has-error'}}" id="identification">
+      <p>Documento de Identidad</p>
+      {{input placeholder="Ingrese su documento de identidad" value=changeset.identification}}
+      {{#if changeset.error.identification}}
+      <span id='idenError' class="help-block">{{changeset.error.identification.validation}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group {{if changeset.error.email 'has-error'}}">
+      <p>Correo Electrónico</p>
+      {{input placeholder="Ingrese su e-mail" value=changeset.email }}
+      {{#if changeset.error.email}}
+      <span class="help-block">{{changeset.error.email.validation}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group">
+      <p>Numero de Telefono</p>
+      {{input placeholder="Ingrese su numero de telefono" value=changeset.phone}}
+    </div>
+    <div class="form-group ">
+      <p>Rol de Usuario</p>
+      {{#power-select options=roles selected=rolSelected searchEnabled=false onchange=(action "setRole") as |role|}}
+      {{role}}
+      {{/power-select}}
+    </div>
+    <div class="form-group {{if changeset.error.password 'has-error'}}">
+      <p>Contraseña</p>
+      {{input placeholder="Ingrese una contraseña" value=changeset.password type="password"}}
+      {{#if changeset.error.password}}
+      <span class="help-block">{{changeset.error.password.validation}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group {{if changeset.error.passwordConfirmation 'has-error'}}">
+      <p>Confirmar contraseña</p>
+      {{input placeholder="Confirme la contraseña" value=changeset.passwordConfirmation type="password"}}
+      {{#if changeset.error.passwordConfirmation}}
+      <span class="help-block">{{changeset.error.passwordConfirmation.validation}}</span>
+      {{/if}}
+    </div>
+    <button class=" btn btn-primary btn-lg" {{action 'save'}}>Registrar</button>
+    <button class=" btn btn-primary btn-lg" {{action 'rollback'}}>Cancelar</button>
+  </form>
+</div>

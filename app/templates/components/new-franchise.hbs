@@ -1,0 +1,134 @@
+<h4><strong>Registrar Franquicia</strong></h4>
+
+<div id="root" align="center">
+  <!--{
+  "name_franchise":"Subway Ruta N",
+  "restaurant":1,
+  "address":"Calle falsa 123",
+  "city":1,
+  "phone":"1234567",
+  "latitude":6.2441234,
+  "longitude":-75.345234,
+  "open_time_week":"10:00",
+  "close_time_week":"20:00",
+  "open_time_weekend":"11:00",
+  "close_time_weekend":"21:00",
+  "photos":[
+    "url1",
+    "url2",
+    "url3"
+  ]
+}-->
+
+  <form id="form-register-fran" class="form-horizontal" {{action 'updateSystem' on="submit"}}>
+    <div class="errors-container" id="errors"></div>
+    <div class="form-group {{if changeset.error.name_franchise 'has-error'}} ">
+      <p>Nombre de Franquicia</p>
+      {{input placeholder="Ej: Taquitoss Restaurant" value=changeset.name_franchise}}
+      {{#if changeset.error.name_franchise}}
+        <span class="help-block">{{changeset.error.name_franchise.validation}}</span>
+      {{/if}}
+    </div>
+
+    <div class="form-group {{if changeset.error.id_restaurant 'has-error'}}">
+      <p>Restaurante</p>
+      {{input placeholder="Id de restaurante" value=changeset.id_restaurant}}
+      {{#if changeset.error.id_restaurant}}
+        <span class="help-block">{{changeset.error.id_restaurant.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group {{if changeset.error.address 'has-error'}}">
+      <p>Direccion</p>
+      {{input placeholder="Ej. Calle 68A Sur #43 A 41 Sabaneta" value=changeset.address}}
+      {{#if changeset.error.address}}
+        <span class="help-block">{{changeset.error.address.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Ciudad</p>
+      {{input placeholder="Id de la ciudad" value=changeset.city}}
+      {{#if changeset.error.city}}
+        <span class="help-block">{{changeset.error.city.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Teléfono</p>
+      {{input placeholder="2889828" value=changeset.phone}}
+      {{#if changeset.error.phone}}
+        <span class="help-block">{{changeset.error.phone.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Latitud</p>
+      {{input placeholder="6.23478867" value=changeset.latitude}}
+      {{#if changeset.error.latitude}}
+        <span class="help-block">{{changeset.error.latitude.validation}}</span>
+      {{/if}}
+    </div>
+
+    <div class="form-group">
+      <p>Longitud</p>
+      {{input placeholder="-76.23478867" value=changeset.longitude}}
+      {{#if changeset.error.longitude}}
+        <span class="help-block">{{changeset.error.longitude.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Hora Apertura en Semana</p>
+      {{input placeholder="08:00" value=changeset.open-time-week}}
+      {{#if changeset.error.open-time-week}}
+        <span class="help-block">{{changeset.error.open-time-week.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Hora Clausura en Semana</p>
+      {{input placeholder="22:00" value=changeset.close-time-week}}
+      {{#if changeset.error.close-time-week}}
+        <span class="help-block">{{changeset.error.close-time-week.validation}}</span>
+      {{/if}}
+    </div>
+
+    <div class="form-group">
+      <p>Hora Apertura en Fin de Semana</p>
+      {{input placeholder="08:00" value=changeset.open-time-weekend}}
+
+      {{#if changeset.error.open-time-weekend}}
+        <span class="help-block">{{changeset.error.open-time-weekend.validation}}</span>
+      {{/if}}
+    </div>
+
+
+    <div class="form-group">
+      <p>Hora Clausura en Fin de Semana</p>
+
+      {{input placeholder="22:00" value=changeset.close-time-weekend}}
+
+      {{#if changeset.error.close-time-weekend}}
+        <span class="help-block">{{changeset.error.close-time-weekend.validation}}</span>
+      {{/if}}
+    </div>
+    <div class="form-group">
+      <p>Fotos</p>
+      {{input placeholder="http://foodsogoodmall.com/wp-content/uploads/2015/02/taquitos.jpg" value=changeset.photos}}
+      {{#if changeset.error.photos}}
+        <span class="help-block">{{changeset.error.photos.validation}}</span>
+      {{/if}}
+    </div>
+    <button class=" btn btn-primary btn-lg" {{action 'save'}}>Registrar</button>
+    <button class=" btn btn-primary btn-lg" {{action 'rollback'}}>Cancelar</button>
+
+  </form>
+</div>
+{{outlet}}

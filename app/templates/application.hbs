@@ -1,0 +1,32 @@
+<div  style="max-width:none;">
+  <div class="menu">
+    {{#link-to 'index'}}
+      <h2 class="left">
+        <em>RestaurantApp</em>
+      </h2>
+    {{/link-to}}
+    <div class="left links">
+      {{#link-to 'busqueda'}}
+        Búsqueda
+      {{/link-to}}
+      {{#link-to 'busqueda_avanzada'}}
+        Búsqueda Avanzada
+      {{/link-to}}
+      {{#link-to 'cliente'}}
+        Registrar Cliente
+      {{/link-to}}
+      {{#link-to 'allCliententes'}}
+        Clientes
+      {{/link-to}}
+      {{#link-to 'registrar-restaurante'}}
+        Registrar Restaurante
+      {{/link-to}}
+      {{#link-to 'registrar-franchise'}}
+        Registrar Franquicia
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

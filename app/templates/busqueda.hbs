@@ -1,0 +1,42 @@
+<div  align="center">
+ <div class="page-header">
+  <h1>Búsqueda de Restaurantes<small></small></h1>
+</div >
+
+<form id ="form-create"class="form-horizontal" >
+  <fieldset>
+ <div class="form-group">
+        <label for="" class="col-sm-4 control-label" >Búsqueda por nombre</label>
+        <div class="col-sm-4">
+        <div class="input-group">
+       {{input  placeholder="Nombre" class="form-control " valueBinding="name_restaurant"}}
+        <div class="input-group-btn">
+    <button type="button" class="btn btn-default" aria-label="Searc">
+  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+</button>
+
+        </div>
+        </div>  
+       </div>
+</div>
+ </fieldset>
+ <!-- Standard button -->
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+ {{#link-to 'busqueda_avanzada'}}<button type="button" class="btn btn-danger">Búsqueda Avanzada</button>{{/link-to}}
+  </form>
+<!--
+  Busqueda por Nombre <input type="text" name="nameRestaurant">
+  <input type="button" name="btnBuscar" value="Buscar">
+  <br>
+  <br>
+  {{#link-to 'busqueda_avanzada' class="button"}}
+    Busqueda Avanzada
+  {{/link-to}}
+  -->
+  <br>
+  {{#each model as |restaurantUnit|}}
+    {{restaurans-listing restaurant=restaurantUnit}}
+  {{/each}}
+</div>
+{{outlet}}

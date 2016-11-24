@@ -1,0 +1,22 @@
+<div  align="center">
+  <div class="page-header">
+    <h4><strong>Búsqueda de Reservas</strong></h4>
+  </div>
+<div id="root" align="center">
+  <form id="form-busqueda-reservas" class="form-horizontal">
+    <fieldset>
+    <div class="form-group" align="center">
+      <div class="errors-container" id="errors"></div>
+      <div style="float: left;width: 45%;margin: 5px;" align="center">
+          Fecha Inicio{{input type="date" size=200px valueBinding="reservation.date_init"}}
+      </div>
+      <div style="float: left;width: 45%;margin: 5px;" align="center">
+          Fecha Fin{{input type="date" valueBinding="reservation.date_end"}}
+      </div>
+    </div>
+    <button class=" btn btn-primary btn-lg" {{action 'search'}}>Buscar</button>
+    <button class=" btn btn-warning btn-lg" {{action 'rollback'}}>Limpiar</button>
+    </fieldset>
+  </form>
+</div>
+</div>
